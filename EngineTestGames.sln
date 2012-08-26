@@ -9,11 +9,17 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_TwoDWindowsGameLibrary", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteGame", "SpriteGame\SpriteGame\SpriteGame.csproj", "{31F8C75C-F95E-4EB4-B170-A3208E6AE144}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SpriteGameContent", "SpriteGame\SpriteGameContent\SpriteGameContent.contentproj", "{B8706B0B-9EDB-4864-8D80-EA00DE757B47}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteGameContent", "SpriteGame\SpriteGameContent\SpriteGameContent.contentproj", "{B8706B0B-9EDB-4864-8D80-EA00DE757B47}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexMapGame", "HexMapGame\HexMapGame\HexMapGame.csproj", "{EAC7EE1B-697B-4B54-9A22-F6C5C9143B59}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "HexMapGameContent", "HexMapGame\HexMapGameContent\HexMapGameContent.contentproj", "{5142CF07-64B7-4979-8903-95A090A2915A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HexMapGameContent", "HexMapGame\HexMapGameContent\HexMapGameContent.contentproj", "{5142CF07-64B7-4979-8903-95A090A2915A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreeDCameraGame", "ThreeDCameraGame\ThreeDCameraGame\ThreeDCameraGame.csproj", "{C60FC207-6413-44B1-B65D-9712726F9DDC}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ThreeDCameraGameContent", "ThreeDCameraGame\ThreeDCameraGameContent\ThreeDCameraGameContent.contentproj", "{E1C9E717-DBD5-4B9B-B4F2-B013F0E4DDAC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ThreeDWindowsGameLibrary", "..\Engine\ThreeDWindowsGameLibrary\_ThreeDWindowsGameLibrary.csproj", "{82BD7D1E-DDB3-437F-9763-11D813910D58}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -43,6 +49,16 @@ Global
 		{EAC7EE1B-697B-4B54-9A22-F6C5C9143B59}.Release|x86.Build.0 = Release|x86
 		{5142CF07-64B7-4979-8903-95A090A2915A}.Debug|x86.ActiveCfg = Debug|x86
 		{5142CF07-64B7-4979-8903-95A090A2915A}.Release|x86.ActiveCfg = Release|x86
+		{C60FC207-6413-44B1-B65D-9712726F9DDC}.Debug|x86.ActiveCfg = Debug|x86
+		{C60FC207-6413-44B1-B65D-9712726F9DDC}.Debug|x86.Build.0 = Debug|x86
+		{C60FC207-6413-44B1-B65D-9712726F9DDC}.Release|x86.ActiveCfg = Release|x86
+		{C60FC207-6413-44B1-B65D-9712726F9DDC}.Release|x86.Build.0 = Release|x86
+		{E1C9E717-DBD5-4B9B-B4F2-B013F0E4DDAC}.Debug|x86.ActiveCfg = Debug|x86
+		{E1C9E717-DBD5-4B9B-B4F2-B013F0E4DDAC}.Release|x86.ActiveCfg = Release|x86
+		{82BD7D1E-DDB3-437F-9763-11D813910D58}.Debug|x86.ActiveCfg = Debug|x86
+		{82BD7D1E-DDB3-437F-9763-11D813910D58}.Debug|x86.Build.0 = Debug|x86
+		{82BD7D1E-DDB3-437F-9763-11D813910D58}.Release|x86.ActiveCfg = Release|x86
+		{82BD7D1E-DDB3-437F-9763-11D813910D58}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
