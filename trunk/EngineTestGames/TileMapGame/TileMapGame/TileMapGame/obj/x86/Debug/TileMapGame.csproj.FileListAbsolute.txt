@@ -1,9 +1,0 @@
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\obj\x86\Debug\ResolveAssemblyReference.cache
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\obj\x86\Debug\Microsoft.Xna.Framework.RuntimeProfile.txt
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\bin\x86\Debug\Content\part2_tileset.xnb
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\bin\x86\Debug\TileMapGame.exe
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\bin\x86\Debug\TileMapGame.pdb
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\bin\x86\Debug\TwoDWindowsGameLibrary.dll
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\bin\x86\Debug\TwoDWindowsGameLibrary.pdb
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\obj\x86\Debug\TileMapGame.exe
-C:\Users\James\Code\EngineTestGames\TileMapGame\TileMapGame\TileMapGame\obj\x86\Debug\TileMapGame.pdb
