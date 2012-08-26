@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapGame", "TileMapGame\TileMapGame\TileMapGame.csproj", "{B1BE14EA-2B34-4D57-ABF6-30088165E047}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "TileMapGameContent", "TileMapGame\TileMapGameContent\TileMapGameContent.contentproj", "{65758AEF-8DC2-4815-BCDD-5844DB544E3D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileMapGameContent", "TileMapGame\TileMapGameContent\TileMapGameContent.contentproj", "{65758AEF-8DC2-4815-BCDD-5844DB544E3D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_TwoDWindowsGameLibrary", "..\Engine\TwoDWindowsGameLibrary\_TwoDWindowsGameLibrary.csproj", "{1ADCFEA3-CFDF-49C0-927B-15AB87F9182D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SpriteGame", "SpriteGame\SpriteGame\SpriteGame.csproj", "{31F8C75C-F95E-4EB4-B170-A3208E6AE144}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "SpriteGameContent", "SpriteGame\SpriteGameContent\SpriteGameContent.contentproj", "{B8706B0B-9EDB-4864-8D80-EA00DE757B47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,6 +27,12 @@ Global
 		{1ADCFEA3-CFDF-49C0-927B-15AB87F9182D}.Debug|x86.Build.0 = Debug|x86
 		{1ADCFEA3-CFDF-49C0-927B-15AB87F9182D}.Release|x86.ActiveCfg = Release|x86
 		{1ADCFEA3-CFDF-49C0-927B-15AB87F9182D}.Release|x86.Build.0 = Release|x86
+		{31F8C75C-F95E-4EB4-B170-A3208E6AE144}.Debug|x86.ActiveCfg = Debug|x86
+		{31F8C75C-F95E-4EB4-B170-A3208E6AE144}.Debug|x86.Build.0 = Debug|x86
+		{31F8C75C-F95E-4EB4-B170-A3208E6AE144}.Release|x86.ActiveCfg = Release|x86
+		{31F8C75C-F95E-4EB4-B170-A3208E6AE144}.Release|x86.Build.0 = Release|x86
+		{B8706B0B-9EDB-4864-8D80-EA00DE757B47}.Debug|x86.ActiveCfg = Debug|x86
+		{B8706B0B-9EDB-4864-8D80-EA00DE757B47}.Release|x86.ActiveCfg = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
