@@ -10,7 +10,7 @@ namespace TileMapGame
         /// </summary>
         static void Main(string[] args)
         {
-		   using (Game1 game = new Game1())
+            using (TileMapGame game = new TileMapGame())
             {
                 game.Run();
             }

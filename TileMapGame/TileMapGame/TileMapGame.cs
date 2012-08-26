@@ -15,7 +15,7 @@ namespace TileMapGame
 	/// <summary>
 	/// This is the main type for your game
 	/// </summary>
-	public class Game1 : Microsoft.Xna.Framework.Game
+	public class TileMapGame : Microsoft.Xna.Framework.Game
 	{
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -24,7 +24,7 @@ namespace TileMapGame
 		int squaresAcross = 18;
 		int squaresDown = 11;
 
-		public Game1()
+		public TileMapGame()
 		{
 			graphics = new GraphicsDeviceManager(this);
 			Content.RootDirectory = "Content";
