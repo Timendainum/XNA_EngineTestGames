@@ -18,6 +18,7 @@ namespace ThreeDCameraGame
 	/// </summary>
 	public class ThreeDCameraGame : Game
 	{
+		private const float CAMERA_MOVE_FACTOR = 0.005f;
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
 		Camera Cam;
@@ -46,6 +47,12 @@ namespace ThreeDCameraGame
 										MathHelper.ToRadians(153),
 										MathHelper.ToRadians(-5),
 										GraphicsDevice);
+						break;
+					case ECameraMode.ArcBall:
+						Cam = new ArcBallCamera(new Vector3(0f, 300f, 0f), 0, 0, 0, MathHelper.PiOver2, 1200, 1000, 10000, GraphicsDevice);
+						break;
+					case ECameraMode.Chase:
+						Cam = new ChaseCamera(new Vector3(0, 400, 2500), new Vector3(0, 200, 0), Vector3.Zero, GraphicsDevice);
 						break;
 				}
 			}
@@ -116,6 +123,13 @@ namespace ThreeDCameraGame
 			//Change camera mode
 			if (keyboardState.IsKeyDown(Keys.D1)) CameraMode = ECameraMode.Target;
 			if (keyboardState.IsKeyDown(Keys.D2)) CameraMode = ECameraMode.Free;
+			if (keyboardState.IsKeyDown(Keys.D3)) CameraMode = ECameraMode.ArcBall;
+			if (keyboardState.IsKeyDown(Keys.D4)) CameraMode = ECameraMode.Chase;
+
+			//mouseState
+			float deltaX = (float)LastMouseState.X - (float)mouseState.X;
+			float deltaY = (float)LastMouseState.Y - (float)mouseState.Y;
+			float scrollDelta = (float)LastMouseState.ScrollWheelValue - (float)mouseState.ScrollWheelValue;
 
 			//Update camera base on mod and input
 			switch (CameraMode)
@@ -124,10 +138,7 @@ namespace ThreeDCameraGame
 					FreeCamera fc = (FreeCamera)Cam;
 
 					//handle camera rotation
-					float deltaX = (float)LastMouseState.X - (float)mouseState.X;
-					float deltaY = (float)LastMouseState.Y - (float)mouseState.Y;
-
-					fc.Rotate(deltaX * 0.005f, deltaY * 0.005f);
+					fc.Rotate(deltaX * CAMERA_MOVE_FACTOR, deltaY * CAMERA_MOVE_FACTOR);
 
 					//Handle camera movement
 					Vector3 translation = Vector3.Zero;
@@ -140,6 +151,40 @@ namespace ThreeDCameraGame
 					translation *= 1.5f * (float)gameTime.ElapsedGameTime.TotalMilliseconds;
 
 					fc.Move(translation);
+
+					break;
+				case ECameraMode.ArcBall:
+					ArcBallCamera abc = (ArcBallCamera)Cam;
+
+					//rotate cam
+					abc.Rotate(deltaX * CAMERA_MOVE_FACTOR, deltaY * CAMERA_MOVE_FACTOR);
+
+					//move cam
+					abc.Move(scrollDelta);
+
+					break;
+				case ECameraMode.Chase:
+					ChaseCamera cc = (ChaseCamera)Cam;
+					BasicActor ship = Actors[0];
+
+					//Handle rotation
+					Vector3 rotationChange = Vector3.Zero;
+					if (keyboardState.IsKeyDown(Keys.W)) rotationChange += new Vector3(1, 0, 0);
+					if (keyboardState.IsKeyDown(Keys.S)) rotationChange += new Vector3(-1, 0, 0);
+					if (keyboardState.IsKeyDown(Keys.A)) rotationChange += new Vector3(0, 1, 0);
+					if (keyboardState.IsKeyDown(Keys.D)) rotationChange += new Vector3(0, -1, 0);
+
+					ship.Rotation += rotationChange * 0.025f;
+
+					//handle movement
+					if (keyboardState.IsKeyDown(Keys.Space))
+					{
+						Matrix rotation = Matrix.CreateFromYawPitchRoll(ship.Rotation.Y, ship.Rotation.X, ship.Rotation.Z);
+						ship.Position += Vector3.Transform(Vector3.Forward, rotation) * (float)gameTime.ElapsedGameTime.TotalMilliseconds * 4;
+					}
+
+					//Update camera
+					cc.Move(ship.Position, ship.Rotation);
 
 					break;
 			}
