@@ -16,11 +16,11 @@ sampler BasicTextureSampler = sampler_state {
 bool TextureEnabled = false;
 
 float3 DiffuseColor = float3(1, 1, 1);
-float3 AmbientColor = float3(.15, .15, .15);
+//float3 AmbientColor = float3(.15, .15, .15);
 
 struct VertexShaderInput
 {
-    float4 Position : POSITION0;
+	float4 Position : POSITION0;
 	float2 UV : TEXCOORD0;
 };
 
@@ -37,7 +37,7 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
     float4 worldPosition = mul(input.Position, World);
     float4x4 viewProjection = mul(View, Projection);
     
-    output.Position = mul(worldPosition, viewProjection);
+	output.Position = mul(worldPosition, viewProjection);
 
 	output.UV = input.UV;
 
@@ -46,19 +46,20 @@ VertexShaderOutput VertexShaderFunction(VertexShaderInput input)
 
 float4 PixelShaderFunction(VertexShaderOutput input) : COLOR0
 {
-	float3 output = DiffuseColor + AmbientColor;
+	//float3 output = DiffuseColor + AmbientColor;
+	float3 output = DiffuseColor;
 
 	if (TextureEnabled)
 		output *= tex2D(BasicTextureSampler, input.UV);
 
-    return float4(output, 1);
+   return float4(output, 1);
 }
 
 technique Technique1
 {
     pass Pass1
     {
-        VertexShader = compile vs_1_1 VertexShaderFunction();
-        PixelShader = compile ps_2_0 PixelShaderFunction();
+	   VertexShader = compile vs_1_1 VertexShaderFunction();
+	   PixelShader = compile ps_2_0 PixelShaderFunction();
     }
 }
