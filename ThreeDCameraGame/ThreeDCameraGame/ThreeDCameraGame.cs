@@ -18,6 +18,7 @@ namespace ThreeDCameraGame
 	/// </summary>
 	public class ThreeDCameraGame : Game
 	{
+		
 		private const float CAMERA_MOVE_FACTOR = 0.005f;
 		GraphicsDeviceManager graphics;
 		SpriteBatch spriteBatch;
@@ -49,7 +50,7 @@ namespace ThreeDCameraGame
 										GraphicsDevice);
 						break;
 					case ECameraMode.ArcBall:
-						Cam = new ArcBallCamera(new Vector3(0f, 300f, 0f), 0, 0, 0, MathHelper.PiOver2, 1200, 1000, 10000, GraphicsDevice);
+						Cam = new ArcBallCamera(new Vector3(0f, 300f, 0f), 0, 0, 0, MathHelper.PiOver2, 5000, 1000, 10000, GraphicsDevice);
 						break;
 					case ECameraMode.Chase:
 						Cam = new ChaseCamera(new Vector3(0, 400, 2500), new Vector3(0, 200, 0), Vector3.Zero, GraphicsDevice);
@@ -93,6 +94,10 @@ namespace ThreeDCameraGame
 			Actors.Add(new BasicActor(Content.Load<Model>(@"ship"), new Vector3(0f, 300f, 0f), Vector3.Zero, Vector3.One, GraphicsDevice));
 			Actors.Add(new BasicActor(Content.Load<Model>(@"teapot"), new Vector3(0f, 0f, -1200f), Vector3.Zero, Vector3.One * 10, GraphicsDevice));
 			Actors.Add(new BasicActor(Content.Load<Model>(@"Ground"), Vector3.Zero, Vector3.Zero, Vector3.One, GraphicsDevice));
+
+			Effect simpleEffect = Content.Load<Effect>("SimpleEffect");
+			Actors[0].SetModelEffect(simpleEffect, true);
+			Actors[2].SetModelEffect(simpleEffect, true);
 
 			LastMouseState = Mouse.GetState();
 		}
@@ -169,8 +174,8 @@ namespace ThreeDCameraGame
 
 					//Handle rotation
 					Vector3 rotationChange = Vector3.Zero;
-					if (keyboardState.IsKeyDown(Keys.W)) rotationChange += new Vector3(1, 0, 0);
-					if (keyboardState.IsKeyDown(Keys.S)) rotationChange += new Vector3(-1, 0, 0);
+					if (keyboardState.IsKeyDown(Keys.W)) rotationChange += new Vector3(-1, 0, 0);
+					if (keyboardState.IsKeyDown(Keys.S)) rotationChange += new Vector3(1, 0, 0);
 					if (keyboardState.IsKeyDown(Keys.A)) rotationChange += new Vector3(0, 1, 0);
 					if (keyboardState.IsKeyDown(Keys.D)) rotationChange += new Vector3(0, -1, 0);
 
@@ -209,7 +214,7 @@ namespace ThreeDCameraGame
 			// TODO: Add your drawing code here
 			foreach (BasicActor actor in Actors)
 			{
-				actor.Draw(Cam.View, Cam.Projection);
+				actor.Draw(Cam.View, Cam.Projection, Cam.Position);
 			}
 
 			base.Draw(gameTime);
