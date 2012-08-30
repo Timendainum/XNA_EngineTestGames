@@ -57,11 +57,6 @@
       <Importer>FbxImporter</Importer>
       <Processor>ModelProcessor</Processor>
     </Compile>
-    <Compile Include="SimpleEffect.fx">
-      <Name>SimpleEffect</Name>
-      <Importer>EffectImporter</Importer>
-      <Processor>EffectProcessor</Processor>
-    </Compile>
     <Compile Include="teapot.fbx">
       <Name>teapot</Name>
       <Importer>FbxImporter</Importer>

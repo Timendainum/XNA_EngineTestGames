@@ -10,6 +10,7 @@ using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
 using ThreeDWindowsGameLibrary.Cameras;
 using ThreeDWindowsGameLibrary.Actors;
+using ThreeDWindowsGameLibrary.Actors.Materials;
 
 namespace ThreeDCameraGame
 {
@@ -95,9 +96,19 @@ namespace ThreeDCameraGame
 			Actors.Add(new BasicActor(Content.Load<Model>(@"teapot"), new Vector3(0f, 0f, -1200f), Vector3.Zero, Vector3.One * 10, GraphicsDevice));
 			Actors.Add(new BasicActor(Content.Load<Model>(@"Ground"), Vector3.Zero, Vector3.Zero, Vector3.One, GraphicsDevice));
 
-			Effect simpleEffect = Content.Load<Effect>("SimpleEffect");
+			Effect simpleEffect = Content.Load<Effect>("LightingEffect");
 			Actors[0].SetModelEffect(simpleEffect, true);
+			Actors[1].SetModelEffect(simpleEffect, true);
 			Actors[2].SetModelEffect(simpleEffect, true);
+
+			LightingMaterial mat = new LightingMaterial();
+			//mat.LightColor = Color.Red.ToVector3();
+			mat.AmbientColor = new Vector3(0.1f, 0.1f, 0.1f);
+
+
+			Actors[0].Material = mat;
+			Actors[1].Material = mat;
+			Actors[2].Material = mat;
 
 			LastMouseState = Mouse.GetState();
 		}
