@@ -122,8 +122,9 @@
       <Name>_TwoDWindowsGameLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\HexMapGameContent\HexMapGameContent.contentproj">
-      <Name>HexMapGameContent</Name>
+      <Name>HexMapGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{5142CF07-64B7-4979-8903-95A090A2915A}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

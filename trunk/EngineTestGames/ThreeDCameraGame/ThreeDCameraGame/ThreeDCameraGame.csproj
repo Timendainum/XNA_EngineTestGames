@@ -121,8 +121,9 @@
       <Name>_ThreeDWindowsGameLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\ThreeDCameraGameContent\ThreeDCameraGameContent.contentproj">
-      <Name>ThreeDCameraGameContent</Name>
+      <Name>ThreeDCameraGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{E1C9E717-DBD5-4B9B-B4F2-B013F0E4DDAC}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
