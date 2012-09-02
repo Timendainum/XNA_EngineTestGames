@@ -23,6 +23,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ThreeDWindowsGameLibrary",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_ClientWindowsGameLibrary", "..\Engine\ClientWindowsGameLibrary\_ClientWindowsGameLibrary.csproj", "{B44D0C73-A38D-4412-BA8C-8145F109A3EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenGame", "ScreenGame\ScreenGame\ScreenGame.csproj", "{8B0851C9-B936-418D-99BD-A856E4AFCB0E}"
+EndProject
+Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "ScreenGameContent", "ScreenGame\ScreenGameContent\ScreenGameContent.contentproj", "{418F6C62-D74C-41F2-A742-26C13FB4F9B3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "_EngineGameLibrary", "..\Engine\EngineGameLibrary\_EngineGameLibrary.csproj", "{D51EC45B-548C-40F6-8D22-01EB467F00A3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -65,6 +71,16 @@ Global
 		{B44D0C73-A38D-4412-BA8C-8145F109A3EF}.Debug|x86.Build.0 = Debug|x86
 		{B44D0C73-A38D-4412-BA8C-8145F109A3EF}.Release|x86.ActiveCfg = Release|x86
 		{B44D0C73-A38D-4412-BA8C-8145F109A3EF}.Release|x86.Build.0 = Release|x86
+		{8B0851C9-B936-418D-99BD-A856E4AFCB0E}.Debug|x86.ActiveCfg = Debug|x86
+		{8B0851C9-B936-418D-99BD-A856E4AFCB0E}.Debug|x86.Build.0 = Debug|x86
+		{8B0851C9-B936-418D-99BD-A856E4AFCB0E}.Release|x86.ActiveCfg = Release|x86
+		{8B0851C9-B936-418D-99BD-A856E4AFCB0E}.Release|x86.Build.0 = Release|x86
+		{418F6C62-D74C-41F2-A742-26C13FB4F9B3}.Debug|x86.ActiveCfg = Debug|x86
+		{418F6C62-D74C-41F2-A742-26C13FB4F9B3}.Release|x86.ActiveCfg = Release|x86
+		{D51EC45B-548C-40F6-8D22-01EB467F00A3}.Debug|x86.ActiveCfg = Debug|x86
+		{D51EC45B-548C-40F6-8D22-01EB467F00A3}.Debug|x86.Build.0 = Debug|x86
+		{D51EC45B-548C-40F6-8D22-01EB467F00A3}.Release|x86.ActiveCfg = Release|x86
+		{D51EC45B-548C-40F6-8D22-01EB467F00A3}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
