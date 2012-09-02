@@ -110,12 +110,26 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="ScreenGame.cs" />
+    <Compile Include="Screens\BackgroundScreen.cs" />
+    <Compile Include="Screens\LoadingScreen.cs" />
+    <Compile Include="Screens\MainMenuScreen.cs" />
+    <Compile Include="Screens\MessageBoxScreen.cs" />
+    <Compile Include="Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Screens\PauseMenuScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\Engine\ClientWindowsGameLibrary\_ClientWindowsGameLibrary.csproj">
+      <Project>{B44D0C73-A38D-4412-BA8C-8145F109A3EF}</Project>
+      <Name>_ClientWindowsGameLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\EngineGameLibrary\_EngineGameLibrary.csproj">
+      <Project>{D51EC45B-548C-40F6-8D22-01EB467F00A3}</Project>
+      <Name>_EngineGameLibrary</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ScreenGameContent\ScreenGameContent.contentproj">
       <Name>ScreenGameContent</Name>
       <XnaReferenceType>Content</XnaReferenceType>
