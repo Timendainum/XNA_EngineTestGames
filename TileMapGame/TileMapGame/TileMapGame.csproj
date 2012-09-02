@@ -122,8 +122,9 @@
       <Name>_TwoDWindowsGameLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\TileMapGameContent\TileMapGameContent.contentproj">
-      <Name>TileMapGameContent</Name>
+      <Name>TileMapGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{65758AEF-8DC2-4815-BCDD-5844DB544E3D}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

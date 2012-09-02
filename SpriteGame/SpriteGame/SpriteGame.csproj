@@ -121,8 +121,9 @@
       <Name>_TwoDWindowsGameLibrary</Name>
     </ProjectReference>
     <ProjectReference Include="..\SpriteGameContent\SpriteGameContent.contentproj">
-      <Name>SpriteGameContent</Name>
+      <Name>SpriteGameContent %28Content%29</Name>
       <XnaReferenceType>Content</XnaReferenceType>
+      <Project>{B8706B0B-9EDB-4864-8D80-EA00DE757B47}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

@@ -181,7 +181,7 @@ namespace ThreeDCameraGame
 					break;
 				case ECameraMode.Chase:
 					ChaseCamera cc = (ChaseCamera)Cam;
-					BasicActor ship = Actors[0];
+					BasicActor ship = Actors[1];
 
 					//Handle rotation
 					Vector3 rotationChange = Vector3.Zero;
