@@ -60,7 +60,7 @@ namespace ScreenGame.Screens
         /// </summary>
         void ConfirmQuitMessageBoxAccepted(object sender, EventArgs e)
         {
-			GameManager.EndGame();
+			//GameManager.EndGame();
 			LoadingScreen.Load(ScreenManager, false, null, new BackgroundScreen(),
                                                            new MainMenuScreen());
         }

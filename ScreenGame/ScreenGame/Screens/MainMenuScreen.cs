@@ -44,9 +44,9 @@ namespace ScreenGame.Screens
         /// </summary>
         void PlayGameMenuEntrySelected(object sender, EventArgs e)
         {
-			GameManager.StartNewSinglePlayerGame();
-			GameManager.TheGameManager.Init(ScreenManager.Game.Content);
-			LoadingScreen.Load(ScreenManager, true, new DockedScreen(GameManager.TheGameManager.ThePlayer.HomeStation));
+			//GameManager.StartNewSinglePlayerGame();
+			//GameManager.TheGameManager.Init(ScreenManager.Game.Content);
+			//LoadingScreen.Load(ScreenManager, true, new DockedScreen(GameManager.TheGameManager.ThePlayer.HomeStation));
         }
 
 
