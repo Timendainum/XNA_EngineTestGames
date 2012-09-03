@@ -116,6 +116,7 @@
     <Compile Include="Screens\MessageBoxScreen.cs" />
     <Compile Include="Screens\OptionsMenuScreen.cs" />
     <Compile Include="Screens\PauseMenuScreen.cs" />
+    <Compile Include="Screens\PlayGameScreen.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />
@@ -129,6 +130,14 @@
     <ProjectReference Include="..\..\..\Engine\EngineGameLibrary\_EngineGameLibrary.csproj">
       <Project>{D51EC45B-548C-40F6-8D22-01EB467F00A3}</Project>
       <Name>_EngineGameLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Engine\ThreeDWindowsGameLibrary\_ThreeDWindowsGameLibrary.csproj">
+      <Project>{82BD7D1E-DDB3-437F-9763-11D813910D58}</Project>
+      <Name>_ThreeDWindowsGameLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Jitter Physics 0.1.7.0\Jitter\Jitter.csproj">
+      <Project>{AA03EF1A-94F7-4D30-AB14-2092863FF923}</Project>
+      <Name>Jitter</Name>
     </ProjectReference>
     <ProjectReference Include="..\ScreenGameContent\ScreenGameContent.contentproj">
       <Name>ScreenGameContent</Name>
