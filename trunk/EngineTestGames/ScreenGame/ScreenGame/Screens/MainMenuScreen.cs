@@ -46,13 +46,13 @@ namespace ScreenGame.Screens
 		{
 			GameStateManager.StartGame(new JitterGameManager());
 
-			//Set up some entities
-			GameStateManager.GameManager.AddEntity(new RigidBodyEntity("ground", Vector3.Zero, Vector3.Zero, Vector3.One));
-			GameStateManager.GameManager.AddEntity(new RigidBodyEntity("ship", new Vector3(0f, 300f, 0f), Vector3.Zero, Vector3.One));
+			////Set up some entities
+			//GameStateManager.GameManager.AddEntity(new RigidBodyEntity("ground", Vector3.Zero, Vector3.Zero, Vector3.One));
+			//GameStateManager.GameManager.AddEntity(new RigidBodyEntity("ship", new Vector3(0f, 300f, 0f), Vector3.Zero, Vector3.One));
 
-			//Actors.Add(new BasicActor(Models["teapot"], new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
-			//Actors.Add(new BasicActor(Models["teapot"], new Vector3(250f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
-			//Actors.Add(new BasicActor(Models["ship"], , Vector3.Zero, Vector3.One, graphics));
+			////Actors.Add(new BasicActor(Models["teapot"], new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
+			////Actors.Add(new BasicActor(Models["teapot"], new Vector3(250f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
+			////Actors.Add(new BasicActor(Models["ship"], , Vector3.Zero, Vector3.One, graphics));
 
 
 			LoadingScreen.Load(ScreenManager, true, new PlayGameScreen());
@@ -89,6 +89,8 @@ namespace ScreenGame.Screens
 		/// </summary>
 		void ConfirmExitMessageBoxAccepted(object sender, EventArgs e)
 		{
+
+			GameStateManager.Running = false;
 			ScreenManager.Game.Exit();
 		}
 
