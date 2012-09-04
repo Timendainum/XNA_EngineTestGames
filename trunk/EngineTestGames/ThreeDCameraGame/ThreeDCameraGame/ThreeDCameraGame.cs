@@ -92,9 +92,9 @@ namespace ThreeDCameraGame
 			spriteBatch = new SpriteBatch(GraphicsDevice);
 
 			// TODO: use this.Content to load your game content here
-			Actors.Add(new BasicActor(Content.Load<Model>(@"ship"), new Vector3(0f, 300f, 0f), Vector3.Zero, Vector3.One, GraphicsDevice));
-			Actors.Add(new BasicActor(Content.Load<Model>(@"teapot"), new Vector3(0f, 0f, -1200f), Vector3.Zero, Vector3.One * 10, GraphicsDevice));
-			Actors.Add(new BasicActor(Content.Load<Model>(@"Ground"), Vector3.Zero, Vector3.Zero, Vector3.One, GraphicsDevice));
+			Actors.Add(new BasicActor(Content.Load<Model>(@"ship"), new Vector3(0f, 300f, 0f), Vector3.Zero, Vector3.One));
+			Actors.Add(new BasicActor(Content.Load<Model>(@"teapot"), new Vector3(0f, 0f, -1200f), Vector3.Zero, Vector3.One * 10));
+			Actors.Add(new BasicActor(Content.Load<Model>(@"Ground"), Vector3.Zero, Vector3.Zero, Vector3.One));
 
 			Effect simpleEffect = Content.Load<Effect>("LightingEffect");
 			Actors[0].SetModelEffect(simpleEffect, true);

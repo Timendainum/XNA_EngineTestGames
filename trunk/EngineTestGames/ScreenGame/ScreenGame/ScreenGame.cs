@@ -82,6 +82,13 @@ namespace ScreenGame
 			// The real drawing happens inside the screen manager component.
 			base.Draw(gameTime);
 		}
+
+		protected override void Update(GameTime gameTime)
+		{
+			GameStateManager.Update(gameTime);
+
+			base.Update(gameTime);
+		}
 		#endregion
 	}
 }
