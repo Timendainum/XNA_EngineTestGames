@@ -8,10 +8,8 @@ using ThreeDWindowsGameLibrary.Actors;
 using ThreeDWindowsGameLibrary.Actors.Materials;
 using ThreeDWindowsGameLibrary.Cameras;
 using ScreenGame.Screens;
-using Jitter.Collision;
-using Jitter;
-using Jitter.Collision.Shapes;
-using Jitter.Dynamics;
+using EngineGameLibrary.Simulation;
+using ThreeDWindowsGameLibrary.Simulation;
 
 namespace ScreenGame
 {
@@ -22,16 +20,20 @@ namespace ScreenGame
 		FreeCamera Cam;
 		GraphicsDevice graphics;
 
+		Dictionary<string, Model> Models = new Dictionary<string, Model>();
 		List<BasicActor> Actors = new List<BasicActor>();
-
-		CollisionSystem collision;
-		World world;
 
 		public override void LoadContent()
 		{
 			if (Content == null)
 				Content = new ContentManager(ScreenManager.Game.Services, "Content");
 
+			//Load models
+               Models["ground"] = Content.Load<Model>(@"Models\Ground");
+			Models["ship"] = Content.Load<Model>(@"Models\ship");
+               Models["teapot"] = Content.Load<Model>(@"Models\teapot");
+
+			//Set graphics
 			graphics = ScreenManager.GraphicsDevice;
 			graphics.BlendState = BlendState.Opaque;
 			graphics.DepthStencilState = DepthStencilState.Default;
@@ -43,49 +45,28 @@ namespace ScreenGame
 					MathHelper.ToRadians(-5),
 					graphics);
 
-			//Jitter
-			collision = new CollisionSystemSAP();
-			world = new World(collision);
+			foreach (Entity e in GameStateManager.GameManager.Entities)
+			{
+				Actors.Add(new BasicActor(e, Models[e.Name]));
+			}
 
-			//ground = new RigidBody(new BoxShape(new JVector(200, 20, 200)));
-			//ground.Position = new JVector(0, -10, 0);
-			//ground.Tag = BodyTag.DontDrawMe;
-			//ground.IsStatic = true; Demo.World.AddBody(ground);
-			////ground.Restitution = 1.0f;
-			//ground.Material.KineticFriction = 0.0f;
+			Effect simpleEffect = Content.Load<Effect>(@"Models\LightingEffect");
 
-
-			Shape shape = new BoxShape(1.0f, 2.0f, 3.0f);
-			RigidBody body = new RigidBody(shape);
-
-			world.AddBody(body);
-
-
-			//Actors.Add(new BasicActor(Content.Load<Model>(@"Models\Ground"), Vector3.Zero, Vector3.Zero, Vector3.One, graphics));
-			//Actors.Add(new BasicActor(Content.Load<Model>(@"Models\teapot"), new Vector3(0f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
-			//Actors.Add(new BasicActor(Content.Load<Model>(@"Models\teapot"), new Vector3(250f, 0f, 0f), Vector3.Zero, Vector3.One * 10, graphics));
-			//Actors.Add(new BasicActor(Content.Load<Model>(@"Models\ship"), new Vector3(-500f, 300f, 500f), Vector3.Zero, Vector3.One, graphics));
-
-			//Effect simpleEffect = Content.Load<Effect>(@"Models\LightingEffect");
-
-			//LightingMaterial mat = new LightingMaterial();
+			LightingMaterial mat = new LightingMaterial();
 			//mat.LightColor = Color.Red.ToVector3();
-			//mat.AmbientColor = new Vector3(0.1f, 0.1f, 0.1f);
+			mat.AmbientColor = new Vector3(0.1f, 0.1f, 0.1f);
 
 
-			//foreach (BasicActor actor in Actors)
-			//{
-			//	actor.SetModelEffect(simpleEffect, true);
-			//	actor.Material = mat;
-			//}
+			foreach (BasicActor actor in Actors)
+			{
+				actor.SetModelEffect(simpleEffect, true);
+				actor.Material = mat;
+			}
 		}
 
 		public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
 		{
-			//Update jitter world
-			float step = (float)gameTime.ElapsedGameTime.TotalSeconds;
-			if (step > 1.0f / 100.0f) step = 1.0f / 100.0f;
-			world.Step(step, true);
+			
 
 			base.Update(gameTime, otherScreenHasFocus, coveredByOtherScreen);
 		}
