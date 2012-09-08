@@ -49,8 +49,8 @@ namespace ScreenGame
 
 
 			if (Cam == null)
-				Cam = new FreeCamera(new Vector3(50, 30, -100),
-					MathHelper.ToRadians(133),
+				Cam = new FreeCamera(new Vector3(50, 50, -100),
+					MathHelper.ToRadians(120),
 					MathHelper.ToRadians(5),
 					graphics);
 
