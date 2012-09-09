@@ -116,6 +116,7 @@
     <Compile Include="Screens\MainMenuScreen.cs" />
     <Compile Include="Screens\MessageBoxScreen.cs" />
     <Compile Include="Screens\OptionsMenuScreen.cs" />
+    <Compile Include="Screens\Overlays\DebugOverlay.cs" />
     <Compile Include="Screens\PauseMenuScreen.cs" />
     <Compile Include="Screens\PlayGameScreen.cs" />
   </ItemGroup>

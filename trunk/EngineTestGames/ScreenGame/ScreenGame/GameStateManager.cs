@@ -1,17 +1,37 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using ThreeDWindowsGameLibrary.Simulation;
 
 namespace ScreenGame
 {
 	public static class GameStateManager
 	{
-		public static bool Running = false;
+		private static bool _running = false;
 		public static JitterGameManager GameManager;
 
-		public static void StartGame(JitterGameManager gameManager)
+		public static bool Running
 		{
-			GameManager = gameManager;
-			Running = true;
+			get
+			{
+				return _running;
+			}
+		}
+		public static void StartGame()
+		{
+			if (!Running || GameManager != null)
+			{
+				GameManager = new JitterGameManager();
+				_running = true;
+				GameManager.StartGame();
+			}
+			else
+				throw new Exception("Can't start game when game is already running.");
+		}
+
+		public static void EndGame()
+		{
+			_running = false;
+			GameManager.EndGame();
 		}
 
 		#region Update
